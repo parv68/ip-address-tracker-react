@@ -25,17 +25,27 @@ const App = () => {
     }
   };
 
-  // Function to handle search for IP address
   const handleSearch = async (e) => {
     e.preventDefault();
+    
+    // Basic validation for IP address format (IPv4)
+    const ipPattern = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    
+    if (!ipPattern.test(ipInput)) {
+      setLocationError('Please enter a valid IP address');
+      return;
+    }
+  
     try {
       const response = await axios.get(
         `https://api.ipgeolocation.io/ipgeo?apiKey=37bb0862fe824b478b8bd9c15babcc7b&ip=${ipInput}`
       );
       setIpData(response.data);
       setCoordinates([response.data.latitude, response.data.longitude]);
+      setLocationError(null); // Clear any previous errors
     } catch (error) {
       console.error('Error fetching IP data:', error);
+      setLocationError('Failed to fetch IP data. Please try again.');
     }
   };
 
