@@ -7,7 +7,7 @@ import MapView from './components/mapview';
 
 const App = () => {
   const [ipData, setIpData] = useState(null);
-  const [coordinates, setCoordinates] = useState(null); // Initially null for empty map
+  const [coordinates, setCoordinates] = useState(null);
   const [ipInput, setIpInput] = useState('');
   const [locationError, setLocationError] = useState(null);
 
@@ -59,18 +59,11 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="bg-blue-500 py-6 text-white text-center">
-        <h1 className="text-3xl font-bold">IP Address Tracker</h1>
-      </header>
-
+      
+        
       <SearchBar handleSearch={handleSearch} setIpInput={setIpInput} ipInput={ipInput} />
-      
       {locationError && <p className="text-red-500 text-center">{locationError}</p>}
-      
-      {/* Display IPInfo when data is available */}
       {ipData && <IPInfo ipData={ipData} />}
-
-      {/* Map will show user's location or searched location */}
       <MapView coordinates={coordinates} />
     </div>
   );

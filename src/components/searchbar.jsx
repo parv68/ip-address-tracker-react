@@ -1,8 +1,10 @@
 
 const SearchBar = ({ handleSearch, setIpInput, ipInput }) => {
   return (
-    <div className="flex justify-center mt-5">
-      <form onSubmit={handleSearch} className="flex w-full max-w-md mx-auto">
+    <div className="flex justify-center bg-blue-500 py-6 text-white text-center">
+      <header>
+        <h1 className="text-3xl font-bold mb-10">IP Address Tracker</h1>
+        <form onSubmit={handleSearch} className="flex w-full max-w-md mx-auto mb-4">
         <input
           type="text"
           value={ipInput}
@@ -17,6 +19,7 @@ const SearchBar = ({ handleSearch, setIpInput, ipInput }) => {
           Search
         </button>
       </form>
+      </header>
     </div>
   );
 };

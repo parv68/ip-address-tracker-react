@@ -1,6 +1,6 @@
 const IPInfo = ({ ipData }) => {
     return (
-      <div className="bg-white shadow-lg rounded-lg max-w-4xl mx-auto p-5 my-8">
+      <div className="bg-white shadow-lg rounded-lg max-w-4xl mx-auto p-5 my-1">
         {ipData && (
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
             <div>

@@ -1,10 +1,9 @@
-
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const MapView = ({ coordinates }) => {
   return (
-    <div className="w-full h-96 mt-8">
+    <div className="w-full h-96 mt-4">
       {coordinates ? (
         <MapContainer center={coordinates} zoom={13} className="h-full w-full">
           <TileLayer
