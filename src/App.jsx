@@ -58,9 +58,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      
-        
+    <div className="min-h-screen bg-gray-200">
       <SearchBar handleSearch={handleSearch} setIpInput={setIpInput} ipInput={ipInput} />
       {locationError && <p className="text-red-500 text-center">{locationError}</p>}
       {ipData && <IPInfo ipData={ipData} />}
