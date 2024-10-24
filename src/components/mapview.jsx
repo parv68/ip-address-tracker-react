@@ -1,4 +1,5 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import 'leaflet/dist/leaflet.css';
 
 const MapView = ({ coordinates }) => {
@@ -11,7 +12,7 @@ const MapView = ({ coordinates }) => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
           <Marker position={coordinates}>
-            <Popup>Your Location</Popup>
+            <LocationOnIcon />
           </Marker>
         </MapContainer>
       ) : (
